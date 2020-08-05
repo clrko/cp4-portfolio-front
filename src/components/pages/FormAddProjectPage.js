@@ -1,19 +1,36 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/esm/Container'
 import Form from 'react-bootstrap/Form'
 import './FormAddProjectPage.css'
-import Container from 'react-bootstrap/esm/Container'
 
 const FormAddProjectPage = () => {
+  const [thumbnail, setThumbnail] = useState('')
   const [validated, setValidated] = useState(false)
 
-  const handleSubmit = (event) => {
-    const form = event.currentTarget
+  const onFileChange = (e) => {
+    setThumbnail(e.target.files[0])
+  }
+
+  const handleSubmit = (e) => {
+    const form = e.currentTarget
     if (form.checkValidity() === false) {
-      event.preventDefault()
-      event.stopPropagation()
+      e.preventDefault()
+      e.stopPropagation()
     }
-    setValidated(true)
+    const data = new FormData()
+    data.append('name', form.firstname)
+    data.append('short_description', form.lastname)
+    data.append('long_description', form.id_instrument)
+    data.append('url_github_front', )
+    data.append('url_github_back', )
+    data.append('url_deployed', )
+    data.append('thumbnail', thumbnail)
+    data.append('techno', )
+    axios
+      .post('project/new-project', data)
+      .then(setValidated(true))
   }
 
   return (
@@ -65,13 +82,14 @@ const FormAddProjectPage = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.File id='projectScreenshot' label='Project thumbnail' />
+          <Form.File id='projectThumbnail' label='Project thumbnail' onChange={onFileChange} />
         </Form.Group>
 
         <Button variant='secondary' type='submit'>
           Submit
         </Button>
       </Form>
+      {validated ? <p>Le projet a bien été ajouté</p> : null}
     </Container>
   )
 }

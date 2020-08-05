@@ -30,7 +30,7 @@ const LandingPageListProjects = () => {
                 shortDescription={project.short_description}
                 urlGithubFront={project.url_github_front}
                 urlGithubBack={project.url_github_back}
-                screenshot={project.screenshot}
+                thumbnail={project.thumbnail}
               />
             )
           }

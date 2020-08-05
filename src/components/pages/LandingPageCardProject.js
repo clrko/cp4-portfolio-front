@@ -6,10 +6,10 @@ import Col from 'react-bootstrap/Col'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 
-const LandingPageCardProject = ({ id, name, shortDescription, urlGithubFront, urlGithubBack, screenshot }) => (
+const LandingPageCardProject = ({ id, name, shortDescription, urlGithubFront, urlGithubBack, thumbnail }) => (
   <Col md={4} key={id}>
     <Card mb={4} className='shadow-sm'>
-      <Card.Img variant='top' src={screenshot} />
+      <Card.Img variant='top' src={thumbnail} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>{shortDescription}</Card.Text>

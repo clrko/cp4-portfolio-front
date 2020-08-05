@@ -19,8 +19,8 @@ const LandingPageCardProject = ({ id, name, shortDescription, urlGithubFront, ur
             <Button variant='outline-secondary' size='sm'>View</Button>
           </ButtonGroup>
           <DropdownButton id='dropdown-basic-button' title={<span className='icon-github' />} size='sm' variant='black'>
-            {urlGithubFront && <Dropdown.Item href={urlGithubFront}>Front</Dropdown.Item>}
-            {urlGithubBack && <Dropdown.Item href={urlGithubBack}>Back</Dropdown.Item>}
+            {urlGithubFront && <Dropdown.Item href={urlGithubFront} target='_blank'>Front</Dropdown.Item>}
+            {urlGithubBack && <Dropdown.Item href={urlGithubBack} target='_blank'>Back</Dropdown.Item>}
           </DropdownButton>
         </div>
       </Card.Body>

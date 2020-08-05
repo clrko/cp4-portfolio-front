@@ -5,10 +5,8 @@ import LandingPageListProjects from './LandingPageListProjects'
 const LandingPage = () => {
   return (
     <div>
-      <div>Header</div>
       <LandingPageAboutMe />
       <LandingPageListProjects />
-      <div>Footer</div>
     </div>
   )
 }

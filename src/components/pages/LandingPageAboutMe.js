@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import './LandingPageAboutMe.css'
@@ -12,12 +11,12 @@ const LandingPageAboutMe = () => (
       <h1>Claire Kodia</h1>
       <p className='lead text-muted'>Full Stack Web Developer <br /> JavaScript / React.js / Node.js</p>
       <p className='social-networks'>
-        <Link href='https://github.com/clrko' target='_blank' rel='noopener noreferrer'>
+        <a href='https://github.com/clrko' target='_blank' rel='noopener noreferrer'>
           <span className='icon-lg icon-github' />
-        </Link>
-        <Link href='https://www.linkedin.com/in/clairekodia/' target='_blank' rel='noopener noreferrer'>
+        </a>
+        <a href='https://www.linkedin.com/in/clairekodia/' target='_blank' rel='noopener noreferrer'>
           <span className='icon-lg icon-linkedin' />
-        </Link>
+        </a>
       </p>
     </Container>
   </Jumbotron>

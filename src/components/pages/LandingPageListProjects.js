@@ -12,7 +12,7 @@ const listProject = [
     url_github_front: 'https://github.com/clrko/DrakeRporter',
     url_github_back: '',
     url_deployed: 'https://clrko.github.io/DrakeRporter/',
-    screenshot: '',
+    screenshot: '/img/drakerporter_hiddenaccess.png',
     techno: 'JavaScript, HTML, CSS'
   },
   {
@@ -23,7 +23,7 @@ const listProject = [
     url_github_front: 'https://github.com/clrko/wild-thunder/',
     url_github_back: 'https://github.com/clrko/Back_BindTest',
     url_deployed: 'https://wild-thunder.netlify.app/',
-    screenshot: '',
+    screenshot: '/img/thunder_welcomepage.png',
     techno: 'React.js, Node.js, MySQL, CSS'
   },
   {
@@ -34,7 +34,7 @@ const listProject = [
     url_github_front: 'https://github.com/clrko/travel_memory_game',
     url_github_back: '',
     url_deployed: 'https://travelmemorygame.netlify.app/',
-    screenshot: '',
+    screenshot: '/img/travel_memory_game_homepage.png',
     techno: 'React.js, CSS'
   },
   {
@@ -45,7 +45,7 @@ const listProject = [
     url_github_front: 'https://github.com/clrko/checkpoint_2_games',
     url_github_back: '',
     url_deployed: 'https://listgames.netlify.app/',
-    screenshot: '',
+    screenshot: '/img/listgames_landingpage.png',
     techno: 'React.js, Hooks, CSS'
   }
 ]
@@ -64,6 +64,7 @@ const LandingPageListProjects = () => {
                 shortDescription={project.short_description}
                 urlGithubFront={project.url_github_front}
                 urlGithubBack={project.url_github_back}
+                screenshot={project.screenshot}
               />
             )
           }

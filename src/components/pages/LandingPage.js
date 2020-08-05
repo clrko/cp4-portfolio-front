@@ -1,12 +1,13 @@
 import React from 'react'
 import LandingPageAboutMe from './LandingPageAboutMe'
+import LandingPageListProjects from './LandingPageListProjects'
 
 const LandingPage = () => {
   return (
     <div>
       <div>Header</div>
       <LandingPageAboutMe />
-      <div>ListProjet</div>
+      <LandingPageListProjects />
       <div>Footer</div>
     </div>
   )

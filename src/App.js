@@ -1,8 +1,12 @@
 import React from 'react'
+import { Route, Switch } from 'react-router-dom'
+import LandingPage from './components/pages/LandingPage'
 
 const App = () => {
   return (
-    <div>Hello</div>
+    <Switch>
+      <Route exact path='/' component={LandingPage} />
+    </Switch>
   )
 }
 

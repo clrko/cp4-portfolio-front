@@ -1,12 +1,7 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button'
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
-import Card from 'react-bootstrap/Card'
-import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/DropdownButton'
 import Row from 'react-bootstrap/Row'
+import LandingPageCardProject from './LandingPageCardProject'
 
 const listProject = [
   {
@@ -61,30 +56,16 @@ const LandingPageListProjects = () => {
       <Container>
         <Row>
           {
-            listProject.map(project => {
-              return (
-                <Col md={4} key={project.id}>
-                  <Card mb={4} className='shadow-sm'>
-                    <Card.Img variant='top' src='holder.js/100px180' />
-                    <Card.Body>
-                      <Card.Title>{project.name}</Card.Title>
-                      <Card.Text>{project.short_description}</Card.Text>
-                      <div class='d-flex justify-content-between align-items-center'>
-                        <ButtonGroup>
-                          <Button variant='outline-secondary' size='sm'>More</Button>
-                          <Button variant='outline-secondary' size='sm'>View</Button>
-                        </ButtonGroup>
-                        <DropdownButton id='dropdown-basic-button' title={<span className='icon-github' />} size='sm' variant='black'>
-                          {project.url_github_front && <Dropdown.Item href={project.url_github_front}>Front</Dropdown.Item>}
-                          {project.url_github_back && <Dropdown.Item href={project.url_github_back}>Back</Dropdown.Item>}
-                        </DropdownButton>
-                      </div>
-                    </Card.Body>
-                  </Card>
-                  <br />
-                </Col>
-              )
-            })
+            listProject.map(project =>
+              <LandingPageCardProject
+                key={project.id}
+                id={project.id}
+                name={project.name}
+                shortDescription={project.short_description}
+                urlGithubFront={project.url_github_front}
+                urlGithubBack={project.url_github_back}
+              />
+            )
           }
         </Row>
       </Container>

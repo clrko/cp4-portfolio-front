@@ -1,0 +1,19 @@
+.custom-jumbotron {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+.custom-jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.custom-jumbotron h1 {
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.custom-jumbotron .container {
+  max-width: 40rem;
+}

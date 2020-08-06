@@ -104,7 +104,7 @@ const FormAddProjectPage = () => {
           Submit
         </Button>
       </Form>
-      {validated ? <p>Le projet a bien été ajouté</p> : null}
+      {validated ? <p>The project has been successfully added!</p> : null}
     </Container>
   )
 }

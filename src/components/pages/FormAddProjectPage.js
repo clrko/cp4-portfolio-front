@@ -44,7 +44,7 @@ const FormAddProjectPage = () => {
     data.append('thumbnail', thumbnail)
     data.append('techno', techno)
     axios
-      .post('project/new-project', data)
+      .post(`${process.env.REACT_APP_SERVER_URL}/project`, data)
       .then(setValidated(true))
   }
 

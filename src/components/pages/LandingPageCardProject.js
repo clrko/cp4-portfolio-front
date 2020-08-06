@@ -9,7 +9,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton'
 const LandingPageCardProject = ({ id, name, shortDescription, urlGithubFront, urlGithubBack, thumbnail }) => (
   <Col md={4} key={id}>
     <Card mb={4} className='shadow-sm'>
-      <Card.Img variant='top' src={thumbnail} />
+      <Card.Img variant='top' src={`${process.env.REACT_APP_SERVER_URL}/${thumbnail}`} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>{shortDescription}</Card.Text>

@@ -18,7 +18,7 @@ const LandingPageListProjects = () => {
   }
 
   return (
-    <div class='album py-5 bg-light'>
+    <div className='album py-5 bg-light'>
       <Container>
         <Row>
           {

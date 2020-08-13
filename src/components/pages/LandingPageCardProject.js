@@ -1,10 +1,20 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
+
+const propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  shortDescription: PropTypes.string,
+  urlGithubFront: PropTypes.string,
+  urlGithubBack: PropTypes.string,
+  thumbnail: PropTypes.string
+}
 
 const LandingPageCardProject = ({
   id,
@@ -55,5 +65,7 @@ const LandingPageCardProject = ({
     <br />
   </Col>
 )
+
+LandingPageCardProject.propTypes = propTypes
 
 export default LandingPageCardProject

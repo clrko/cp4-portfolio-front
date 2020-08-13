@@ -34,7 +34,15 @@ const FormAddProjectPage = () => {
       e.stopPropagation()
     }
     const data = new FormData()
-    const { name, shortDescription, longDescription, urlGithubFront, urlGithubBack, urlDeployed, techno } = project
+    const {
+      name,
+      shortDescription,
+      longDescription,
+      urlGithubFront,
+      urlGithubBack,
+      urlDeployed,
+      techno
+    } = project
     data.append('name', name)
     data.append('short_description', shortDescription)
     data.append('long_description', longDescription)
@@ -54,14 +62,30 @@ const FormAddProjectPage = () => {
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group controlId='name'>
           <Form.Label>Project name</Form.Label>
-          <Form.Control required type='text' placeholder='Enter the project name' onChange={handleChange} />
-          <Form.Control.Feedback type='invalid'> Please provide a name.</Form.Control.Feedback>
+          <Form.Control
+            required
+            type='text'
+            placeholder='Enter the project name'
+            onChange={handleChange}
+          />
+          <Form.Control.Feedback type='invalid'>
+            {' '}
+            Please provide a name.
+          </Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group controlId='shortDescription'>
           <Form.Label>Short Description</Form.Label>
-          <Form.Control required type='text' placeholder='Short description' onChange={handleChange} />
-          <Form.Control.Feedback type='invalid'> Please provide a short description.</Form.Control.Feedback>
+          <Form.Control
+            required
+            type='text'
+            placeholder='Short description'
+            onChange={handleChange}
+          />
+          <Form.Control.Feedback type='invalid'>
+            {' '}
+            Please provide a short description.
+          </Form.Control.Feedback>
           <Form.Text className='text-muted'>
             Please describe the project in one line.
           </Form.Text>
@@ -74,30 +98,63 @@ const FormAddProjectPage = () => {
 
         <Form.Group controlId='urlGithubFront'>
           <Form.Label>Source code frontend</Form.Label>
-          <Form.Control type='url' placeholder='https://urlfront.com/' onChange={handleChange} />
-          <Form.Control.Feedback type='invalid'> Please provide a valid url.</Form.Control.Feedback>
+          <Form.Control
+            type='url'
+            placeholder='https://urlfront.com/'
+            onChange={handleChange}
+          />
+          <Form.Control.Feedback type='invalid'>
+            {' '}
+            Please provide a valid url.
+          </Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group controlId='urlGithubBack'>
           <Form.Label>Source code backend</Form.Label>
-          <Form.Control type='url' placeholder='https://urlback.com/' onChange={handleChange} />
-          <Form.Control.Feedback type='invalid'> Please provide a valid url.</Form.Control.Feedback>
+          <Form.Control
+            type='url'
+            placeholder='https://urlback.com/'
+            onChange={handleChange}
+          />
+          <Form.Control.Feedback type='invalid'>
+            {' '}
+            Please provide a valid url.
+          </Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group controlId='urlDeployed'>
           <Form.Label>Project deloyed</Form.Label>
-          <Form.Control type='url' placeholder='https://myapp.com/' onChange={handleChange} />
-          <Form.Control.Feedback type='invalid'> Please provide a valid url.</Form.Control.Feedback>
+          <Form.Control
+            type='url'
+            placeholder='https://myapp.com/'
+            onChange={handleChange}
+          />
+          <Form.Control.Feedback type='invalid'>
+            {' '}
+            Please provide a valid url.
+          </Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group controlId='techno'>
           <Form.Label>Technologies</Form.Label>
-          <Form.Control required type='text' placeholder='React.js, Node.js etc.' onChange={handleChange} />
-          <Form.Control.Feedback type='invalid'> Please provide the list of technologies used.</Form.Control.Feedback>
+          <Form.Control
+            required
+            type='text'
+            placeholder='React.js, Node.js etc.'
+            onChange={handleChange}
+          />
+          <Form.Control.Feedback type='invalid'>
+            {' '}
+            Please provide the list of technologies used.
+          </Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group>
-          <Form.File id='thumbnail' label='Project thumbnail' onChange={onFileChange} />
+          <Form.File
+            id='thumbnail'
+            label='Project thumbnail'
+            onChange={onFileChange}
+          />
         </Form.Group>
 
         <Button variant='secondary' type='submit'>

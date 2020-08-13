@@ -14,26 +14,24 @@ const LandingPageListProjects = () => {
   const getListProject = () => {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/project`)
-      .then(res => setListProject(res.data))
+      .then((res) => setListProject(res.data))
   }
 
   return (
     <div className='album py-5 bg-light'>
       <Container>
         <Row>
-          {
-            listProject.map(project =>
-              <LandingPageCardProject
-                key={project.id}
-                id={project.id}
-                name={project.name}
-                shortDescription={project.short_description}
-                urlGithubFront={project.url_github_front}
-                urlGithubBack={project.url_github_back}
-                thumbnail={project.thumbnail}
-              />
-            )
-          }
+          {listProject.map((project) => (
+            <LandingPageCardProject
+              key={project.id}
+              id={project.id}
+              name={project.name}
+              shortDescription={project.short_description}
+              urlGithubFront={project.url_github_front}
+              urlGithubBack={project.url_github_back}
+              thumbnail={project.thumbnail}
+            />
+          ))}
         </Row>
       </Container>
     </div>

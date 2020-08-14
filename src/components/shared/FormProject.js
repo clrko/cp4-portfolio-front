@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form'
 import './FormProject.css'
 
 const propTypes = {
+  formTitle: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   onFileChange: PropTypes.func.isRequired,
@@ -23,6 +24,7 @@ const propTypes = {
 }
 
 const FormProject = ({
+  formTitle,
   handleChange,
   handleSubmit,
   onFileChange,
@@ -39,7 +41,7 @@ const FormProject = ({
   validated
 }) => (
   <Container>
-    <h1 className='add-project-title'>Add a new project</h1>
+    <h2 className='add-project-title'>{formTitle}</h2>
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
       <Form.Group controlId='name'>
         <Form.Label>Project name</Form.Label>
@@ -144,7 +146,6 @@ const FormProject = ({
       <Form.Group>
         <Form.Label>Project thumbnail</Form.Label>
         <input
-          required
           type='file'
           className='form-control'
           id='thumbnail'

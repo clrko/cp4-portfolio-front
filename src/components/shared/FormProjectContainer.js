@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+import PropTypes from 'prop-types'
 import FormProject from '../shared/FormProject'
 
-const FormProjectContainer = () => {
-  const [project, setProject] = useState({
+const defaultProps = {
+  initialValues: {
     name: '',
     shortDescription: '',
     longDescription: '',
@@ -12,7 +12,26 @@ const FormProjectContainer = () => {
     urlDeployed: '',
     thumbnail: '',
     techno: ''
-  })
+  }
+}
+
+const propTypes = {
+  formTitle: PropTypes.string.isRequired,
+  initialValues: PropTypes.shape({
+    name: PropTypes.string,
+    shortDescription: PropTypes.string,
+    longDescription: PropTypes.string,
+    urlGithubFront: PropTypes.string,
+    urlGithubBack: PropTypes.string,
+    urlDeployed: PropTypes.string,
+    thumbnail: PropTypes.string,
+    techno: PropTypes.string
+  }),
+  apiCall: PropTypes.func.isRequired
+}
+
+const FormProjectContainer = ({ formTitle, initialValues, apiCall }) => {
+  const [project, setProject] = useState(initialValues)
   const [thumbnail, setThumbnail] = useState('')
   const [validated, setValidated] = useState(false)
 
@@ -50,11 +69,12 @@ const FormProjectContainer = () => {
     data.append('url_deployed', urlDeployed)
     data.append('thumbnail', thumbnail)
     data.append('techno', techno)
-    axios.post(`${process.env.REACT_APP_SERVER_URL}/project`, data)
+    apiCall(data)
   }
 
   return (
     <FormProject
+      formTitle={formTitle}
       handleChange={handleChange}
       handleSubmit={handleSubmit}
       onFileChange={onFileChange}
@@ -63,5 +83,8 @@ const FormProjectContainer = () => {
     />
   )
 }
+
+FormProjectContainer.propTypes = propTypes
+FormProjectContainer.defaultProps = defaultProps
 
 export default FormProjectContainer

@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
+import { Link } from 'react-router-dom'
 
 const propTypes = {
   id: PropTypes.number,
@@ -40,6 +41,14 @@ const LandingPageCardProject = ({
             </Button>
             <Button variant='outline-secondary' size='sm'>
               View
+            </Button>
+            <Button
+              as={Link}
+              to={`/edit-project/${id}`}
+              variant='outline-secondary'
+              size='sm'
+            >
+              Edit
             </Button>
           </ButtonGroup>
           <DropdownButton

@@ -49,12 +49,20 @@ const LandingPageCardProject = ({
             variant='black'
           >
             {urlGithubFront && (
-              <Dropdown.Item href={urlGithubFront} target='_blank'>
+              <Dropdown.Item
+                href={urlGithubFront}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 Front
               </Dropdown.Item>
             )}
             {urlGithubBack && (
-              <Dropdown.Item href={urlGithubBack} target='_blank'>
+              <Dropdown.Item
+                href={urlGithubBack}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 Back
               </Dropdown.Item>
             )}

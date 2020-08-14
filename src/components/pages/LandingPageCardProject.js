@@ -28,7 +28,7 @@ const LandingPageCardProject = ({
     <Card mb={4} className='shadow-sm'>
       <Card.Img
         variant='top'
-        src={`${process.env.REACT_APP_SERVER_URL}/${thumbnail}`}
+        src={`${process.env.REACT_APP_SERVER_URL}/images/${thumbnail}`}
       />
       <Card.Body>
         <Card.Title>{name}</Card.Title>

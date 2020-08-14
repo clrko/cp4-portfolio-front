@@ -28,10 +28,12 @@ const FormAddProjectPage = () => {
   }
 
   const handleSubmit = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
     const form = e.currentTarget
+    setValidated(true)
     if (form.checkValidity() === false) {
-      e.preventDefault()
-      e.stopPropagation()
+      return
     }
     const data = new FormData()
     const {
@@ -53,7 +55,6 @@ const FormAddProjectPage = () => {
     data.append('techno', techno)
     axios
       .post(`${process.env.REACT_APP_SERVER_URL}/project`, data)
-      .then(setValidated(true))
   }
 
   return (
@@ -150,9 +151,12 @@ const FormAddProjectPage = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.File
+          <Form.Label>Project thumbnail</Form.Label>
+          <input
+            required
+            type='file'
+            className='form-control'
             id='thumbnail'
-            label='Project thumbnail'
             onChange={onFileChange}
           />
         </Form.Group>

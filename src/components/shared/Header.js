@@ -2,13 +2,14 @@ import React from 'react'
 import Container from 'react-bootstrap/esm/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import { NavLink } from 'react-router-dom'
 import './Footer.css'
 
 const Header = () => {
   return (
     <Navbar variant='dark' bg='dark' className='shadow-sm'>
       <Container className='d-flex justify-content-between'>
-        <Navbar.Brand href='/' className='d-flex align-items-center'>
+        <Navbar.Brand as={NavLink} to='/' className='d-flex align-items-center'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='20'
@@ -31,7 +32,9 @@ const Header = () => {
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='mr-auto'>
-            <Nav.Link href='/add-project'>Add Project</Nav.Link>
+            <Nav.Link as={NavLink} to='/add-project'>
+              Add Project
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
